@@ -26,14 +26,16 @@ SHIFT=1.5
 RIGHT=1
 LEFT=1.05
 
+INTERNAL=1.05
+
 syms = {'a':HOME*PINKY*LEFT,
-        'b':LOWER*INDEX*RIGHT,
+        'b':LOWER*INDEX*RIGHT*INTERNAL,
         'c':LOWER*MIDDLE*LEFT,
         'd':HOME*MIDDLE*LEFT,
         'e':UPPER*MIDDLE*LEFT,
         'f':HOME*INDEX*LEFT,
-        'g':HOME*INDEX*LEFT,
-        'h':HOME*INDEX*RIGHT,
+        'g':HOME*INDEX*LEFT*INTERNAL,
+        'h':HOME*INDEX*RIGHT*INTERNAL,
         'i':UPPER*MIDDLE*RIGHT,
         'j':HOME*INDEX*RIGHT,
         'k':HOME*MIDDLE*RIGHT,
@@ -45,8 +47,8 @@ syms = {'a':HOME*PINKY*LEFT,
         'q':UPPER*PINKY*LEFT,
         'r':UPPER*INDEX*LEFT,
         's':HOME*RING*LEFT,
-        't':UPPER*INDEX*LEFT,
-        'u':UPPER*INDEX*RIGHT,
+        't':UPPER*INDEX*LEFT*INTERNAL,
+        'u':UPPER*INDEX*RIGHT*INTERNAL,
         'v':LOWER*INDEX*LEFT,
         'w':UPPER*RING*LEFT,
         'x':LOWER*RING*LEFT,
