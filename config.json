@@ -1,0 +1,69 @@
+{
+    "keyboard": {
+	"difficulties": {
+	    "rows": {
+		"digits": "3",
+		"upper": "2",
+		"home": "1",
+		"lower": "4",
+		"space": "0.5"
+	    },
+	    "hands": {
+		"left": "1.05",
+		"right": "1"
+	    },
+	    "fingers": {
+	    },
+	    "modified": {
+	    },
+	    "far": {
+	    }
+	}
+    },
+    "layouts": [
+	{
+	    "name": "qwerty",
+	    "symbols": [
+		{
+		    "symbol": "a",
+		    "classes": [
+			"alphabet",
+			"lowercase"
+		    ],
+		    "position": {
+			"row": "home",
+			"finger": "pinky",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		}
+	    ],
+	    "lessons": [
+		{
+		    "name": "fj",
+		    "symbols": [
+			"f",
+			"j"
+		    ]
+		}
+	    ],
+	    "courses": [
+		{
+		    "name": "fj",
+		    "new": [
+			"f",
+			"j",
+		    ]
+		},
+		{
+		    "name": "dk",
+		    "new": [
+			"d",
+			"k"
+		    ]
+		}
+	    ]
+	}
+    ]
+}
