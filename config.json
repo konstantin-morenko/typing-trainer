@@ -2,21 +2,29 @@
     "keyboard": {
 	"difficulties": {
 	    "rows": {
-		"digits": "3",
-		"upper": "2",
-		"home": "1",
-		"lower": "4",
-		"space": "0.5"
+		"digits": 3,
+		"upper": 2,
+		"home": 1,
+		"lower": 4,
+		"space": 0.5
 	    },
 	    "hands": {
-		"left": "1.05",
-		"right": "1"
+		"left": 1.05,
+		"right": 1
 	    },
 	    "fingers": {
+		"thumb": 0.2,
+		"index": 1,
+		"middle": 1,
+		"ring": 1.2,
+		"pinky": 1.3
 	    },
 	    "modified": {
+		"shift": 1.5
 	    },
 	    "far": {
+		"0": 1,
+		"1": 1.05
 	    }
 	}
     },
@@ -27,11 +35,335 @@
 		{
 		    "symbol": "a",
 		    "classes": [
-			"alphabet",
-			"lowercase"
+			"alphabet"
 		    ],
 		    "position": {
 			"row": "home",
+			"finger": "pinky",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "b",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "lower",
+			"finger": "index",
+			"hand": "left",
+			"modified": "no",
+			"far": "1"
+		    }
+		},
+		{
+		    "symbol": "c",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "lower",
+			"finger": "middle",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "d",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "home",
+			"finger": "middle",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "e",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "upper",
+			"finger": "middle",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "f",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "home",
+			"finger": "index",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "g",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "home",
+			"finger": "index",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "h",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "home",
+			"finger": "index",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "i",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "upper",
+			"finger": "middle",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "j",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "home",
+			"finger": "index",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "k",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "home",
+			"finger": "middle",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "l",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "home",
+			"finger": "ring",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "m",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "lower",
+			"finger": "index",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "n",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "lower",
+			"finger": "index",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "o",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "upper",
+			"finger": "ring",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "p",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "upper",
+			"finger": "pinky",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "q",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "upper",
+			"finger": "pinky",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "r",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "upper",
+			"finger": "index",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "s",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "home",
+			"finger": "ring",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "t",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "upper",
+			"finger": "index",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "u",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "upper",
+			"finger": "index",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "v",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "lower",
+			"finger": "index",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "w",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "home",
+			"finger": "ring",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "x",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "lower",
+			"finger": "ring",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "y",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "upper",
+			"finger": "index",
+			"hand": "right",
+			"modified": "no",
+			"far": "1"
+		    }
+		},
+		{
+		    "symbol": "z",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "lower",
 			"finger": "pinky",
 			"hand": "left",
 			"modified": "no",
@@ -53,7 +385,7 @@
 		    "name": "fj",
 		    "new": [
 			"f",
-			"j",
+			"j"
 		    ]
 		},
 		{
