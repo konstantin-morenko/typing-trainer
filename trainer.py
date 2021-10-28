@@ -76,10 +76,10 @@ def get_difficulties(syms):
     return diffs
 
 def select_difficulties(syms, max_diff):
-    out = {}
+    out = []
     for c in syms:
-        if syms[c] <= max_diff + 0.001:
-            out[c] = syms[c]
+        if symbol_diff(c['position'], _config['keyboard']['difficulties']) <= max_diff + 0.001:
+            out.append(c)
     return out
 
 def sel_lesson(scr):
@@ -213,7 +213,7 @@ def menu_difficulty(scr, layout):
             c = stdscr.getkey()
 
         curses.noecho()
-        
+        select_difficulties(layout['symbols'], available_diffs[int(l)])
         # trainer(scr, select_difficulties(layout, available_diffs[int(l)]))
 
 def trainer(scr, layout):
