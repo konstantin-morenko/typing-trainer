@@ -60,11 +60,18 @@ syms = {'a':HOME*PINKY*LEFT,
 lessons = [{'f': syms['f'], 'j': syms['j']},
            {'f': syms['f'], 'g': syms['g'], 'h': syms['h'], 'j': syms['j']}]
 
+def symbol_diff(pos, diffs):
+    d = 1
+    for p in pos:
+        d *= diffs[p][pos[p]]
+    return d
+
 def get_difficulties(syms):
     diffs = []
-    for c in list(syms.keys()):
-        if syms[c] not in diffs:
-            diffs.append(syms[c])
+    for c in list(syms['symbols']):
+        d = symbol_diff(c['position'], _config['keyboard']['difficulties'])
+        if d not in diffs:
+            diffs.append(d)
     diffs.sort()
     return diffs
 
@@ -161,8 +168,8 @@ def menu_layout(scr):
         else:
             for l in _config['layouts']:
                 if k == l['hotkey']:
-                    pass
-                    # Process further
+                    menu_type(scr, l)
+
 
 def menu_type(scr, layout):
 
@@ -194,7 +201,7 @@ def menu_difficulty(scr, layout):
         
         available_diffs = get_difficulties(layout)
         for i in range(0, len(available_diffs)):
-            stdscr.addstr(4+i, 1, str(i) + " " + str(available_diffs[i]) + " " + "".join([x for x in list(select_difficulties(layout, available_diffs[i]).keys())]))
+            stdscr.addstr(4+i, 1, str(i) + " " + str(available_diffs[i]))
 
         stdscr.addstr(2, 1, "Select difficulty: ")
         c = ''
@@ -207,7 +214,7 @@ def menu_difficulty(scr, layout):
 
         curses.noecho()
         
-        trainer(scr, select_difficulties(layout, available_diffs[int(l)]))
+        # trainer(scr, select_difficulties(layout, available_diffs[int(l)]))
 
 def trainer(scr, layout):
     lesson = gen(layout)

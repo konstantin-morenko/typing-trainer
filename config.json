@@ -1,18 +1,18 @@
 {
     "keyboard": {
 	"difficulties": {
-	    "rows": {
+	    "row": {
 		"digits": 3,
 		"upper": 2,
 		"home": 1,
 		"lower": 4,
 		"space": 0.5
 	    },
-	    "hands": {
+	    "hand": {
 		"left": 1.05,
 		"right": 1
 	    },
-	    "fingers": {
+	    "finger": {
 		"thumb": 0.2,
 		"index": 1,
 		"middle": 1,
@@ -20,6 +20,7 @@
 		"pinky": 1.3
 	    },
 	    "modified": {
+		"no": 1.0,
 		"shift": 1.5
 	    },
 	    "far": {
