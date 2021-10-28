@@ -9,6 +9,8 @@ import random
 
 import sys
 
+import json
+
 HOME=1
 UPPER=2
 LOWER=4
@@ -147,20 +149,20 @@ def menu_layout(scr):
         scr.clear()
 
         scr.addstr(2, 1, 'LAYOUT MENU')
+        scr.addstr(3, 1, '(q) Back')
 
-        scr.addstr(4, 1, '(w) QWERTY')
-        scr.addstr(5, 1, '( ) Dvorak')
-        scr.addstr(6, 1, '( ) ЙЦУКЕН')
-
-        scr.addstr(8, 1, '(q) Back')
-
-        scr.addstr(10, 1, 'HERE WILL BE LAYOUT STATISTICS')
+        for i in range(0, len(_config['layouts'])):
+            layout = _config['layouts'][i]
+            scr.addstr(i+5, 1, '(' + layout['hotkey'] + ') ' + layout['name'])
 
         k = scr.getkey()
-        if k == 'w':
-            menu_type(scr, syms)
-        elif k == 'q':
+        if k == 'q':
             return
+        else:
+            for l in _config['layouts']:
+                if k == l['hotkey']:
+                    pass
+                    # Process further
 
 def menu_type(scr, layout):
 
@@ -283,6 +285,10 @@ def main(stdscr):
     menu_main(stdscr)
     
 
+
+with open('config.json', 'r') as myfile:
+    data=myfile.read()
+_config = json.loads(data)
 
 stdscr = curses.initscr()
 
