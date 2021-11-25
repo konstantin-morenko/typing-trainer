@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import json
-import random
+import random, datetime
 
 
 if __name__ == '__main__':
@@ -10,6 +10,11 @@ if __name__ == '__main__':
     with open('config.json', 'r') as myfile:
         data=myfile.read()
     _config = json.loads(data)
+
+    def waiting_for_char(scr, key = "\n"):
+        while scr.getkey() != key:
+            pass
+        return
 
     class Pos:
 
@@ -115,6 +120,9 @@ if __name__ == '__main__':
         def __init__(self, ref):
             self._ref = ref
             self._syms = []
+            self._typed = ''
+            self._started = False
+            self._finished = False
 
         def append(self, sym):
             self._syms.append(sym)
@@ -130,6 +138,49 @@ if __name__ == '__main__':
             c.append('name', self._ref._name)
             c.append('set', ''.join([x._name for x in self._syms]))
             return c
+
+        def _count_errors(self):
+            err = 0
+            for i in range(0, len(self._typed)):
+                if self._syms[i]._name != self._typed[i]:
+                    err += 1
+            return err
+
+        def screen(self):
+            '''Return Screen'''
+            s = Screen()
+            s.addstr(5, 1, self.string())
+            s.addstr(6, 1, self._typed)
+
+            if self._is_finished():
+                s.addstr(8, 1, "Errors: {0}".format(self._count_errors()))
+                d = self._finished - self._started
+                s.addstr(9, 1, "Time: {0:.2f}".format(d / datetime.timedelta(seconds=1)))
+
+            return s
+
+        def type(self, char):
+            '''Typing one char'''
+            if len(self._typed) == 0:
+                self._started = datetime.datetime.now()
+            self._typed += char
+            if len(self._typed) == len(self._syms):
+                self._finished = datetime.datetime.now()
+
+
+        def _is_finished(self):
+            return len(self._typed) == len(self._syms)
+
+        def learn(self, scr):
+            '''All the things to learn'''
+            scr.clear()
+            self.screen().show(scr)
+            while not self._is_finished():
+                c = scr.getkey()
+                self.type(c)
+                self.screen().show(scr)
+            waiting_for_char(scr)
+            return
 
     class Card:
         '''Card for pretty printing.'''
@@ -160,9 +211,34 @@ if __name__ == '__main__':
     qwerty = Layout(l['name'], l['hotkey'], l['symbols'], l['lessons'])
 
     # print(qwerty.symbols())
-    print(qwerty._lessons[1].info())
+    # print(qwerty._lessons[1].info())
     ex_set = qwerty._lessons[1].get_exercise_set()
-    ex_lesson = ex_set.get_lesson(15, 1)
+    ex_lesson = ex_set.get_lesson(_config['learning']['string']['length'], 1)
     # print(ex_lesson.string())
-    card = ex_lesson.card()
-    print(card.pretty())
+    # card = ex_lesson.card()
+    # print(card.pretty())
+
+    class Screen:
+
+        def __init__(self):
+            self._strings = []
+
+        def addstr(self, y, x, string):
+            self._strings.append((y, x, string))
+
+        def show(self, scr, cursor = False):
+            for s in self._strings:
+                scr.addstr(*s)
+            if cursor:
+                scr.addstr(cursor, '')
+
+    def main(scr):
+        scr.clear()
+        ex_lesson.learn(scr)
+
+        
+
+    import curses
+    from curses import wrapper
+
+    wrapper(main)

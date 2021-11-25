@@ -1,4 +1,9 @@
 {
+    "learning": {
+	"string": {
+	    "length": 50
+	}
+    },
     "keyboard": {
 	"difficulties": {
 	    "row": {
