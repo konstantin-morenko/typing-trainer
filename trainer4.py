@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
-import json
-import random, datetime
+import json, sys, random, datetime
 
 
 if __name__ == '__main__':
@@ -24,9 +23,11 @@ if __name__ == '__main__':
         scr.clear()
         pos = 0
 
+        scr.addstr(1, 1, heading)
+
         selected = False
         while not selected:
-            scr.addstr(3, 1, "Selected {0}/{1}".format(pos, len(arr)))
+            scr.addstr(3, 1, "Selected {0}/{1}".format(pos+1, len(arr)))
             scr.addstr(5, 1, "-> " + fmt(arr[pos]) + " <-")
 
             c = scr.getkey()
@@ -42,7 +43,7 @@ if __name__ == '__main__':
                 selected = True
             elif c == 'q':
                 return False
-        return arr[pos][0]
+        return pos
 
 
     class Pos:
@@ -93,6 +94,11 @@ if __name__ == '__main__':
                 lo = Lesson(l['name'], syms)
                 self._lessons.append(lo)
 
+        def learn(self, scr):
+            '''Selecting and learning'''
+            lsn = self._lessons[select_from_array(scr, "LESSON", [(l._name, '---') for l in self._lessons])]
+            lsn.learn(scr)
+
         def _s_sym(self, sym):
             '''Search for particular symbol.'''
             for s in self._symbols:
@@ -127,6 +133,12 @@ if __name__ == '__main__':
         def get_exercise_set(self):
             return ExerciseSet(self._name, self, self._symbols)
 
+        def learn(self, scr):
+            scr.clear()
+            st = self.get_exercise_set()
+            st.learn(scr)
+
+
     class ExerciseSet:
 
         '''Set to generate exercise strings.'''
@@ -141,6 +153,11 @@ if __name__ == '__main__':
             for i in range(0, length):
                 ls.append(random.choice(self._symbols))
             return ls
+
+        def learn(self, scr):
+            scr.clear()
+            lsn = self.get_lesson(15, 1)
+            lsn.learn(scr)
 
     class ExerciseLesson:
 
@@ -263,8 +280,21 @@ if __name__ == '__main__':
 
     def main(scr):
         scr.clear()
-        layout = select_from_array(scr, "LAYOUT", [(1, 'First'), (2, 'Second')])
-        ex_lesson.learn(scr)
+
+        layouts = []
+        for l in _config['layouts']:
+            layouts.append((l['hotkey'], l['name']))
+        layout = _config['layouts'][select_from_array(scr, "LAYOUT", layouts)]
+        if not layout:
+            sys.exit(0)
+
+        training_layout = Layout(layout['name'],
+                                 layout['hotkey'],
+                                 layout['symbols'],
+                                 layout['lessons'])
+
+        training_layout.learn(scr)
+
 
         
 
