@@ -16,6 +16,35 @@ if __name__ == '__main__':
             pass
         return
 
+    def select_from_array(scr, heading, arr):
+        '''Select from (id, string)'''
+        def fmt(tpl):
+            return "{0} {1:.30s}".format(*tpl)
+
+        scr.clear()
+        pos = 0
+
+        selected = False
+        while not selected:
+            scr.addstr(3, 1, "Selected {0}/{1}".format(pos, len(arr)))
+            scr.addstr(5, 1, "-> " + fmt(arr[pos]) + " <-")
+
+            c = scr.getkey()
+            if c == 'KEY_UP':
+                pos -= 1
+                if pos < 0:
+                    pos = 0
+            elif c == 'KEY_DOWN':
+                pos += 1
+                if pos >= len(arr):
+                    pos = len(arr)-1
+            elif c == "\n":
+                selected = True
+            elif c == 'q':
+                return False
+        return arr[pos][0]
+
+
     class Pos:
 
         '''Holding position of a key with difficulties.'''
@@ -234,6 +263,7 @@ if __name__ == '__main__':
 
     def main(scr):
         scr.clear()
+        layout = select_from_array(scr, "LAYOUT", [(1, 'First'), (2, 'Second')])
         ex_lesson.learn(scr)
 
         
