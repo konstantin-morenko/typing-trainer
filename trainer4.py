@@ -77,7 +77,7 @@ if __name__ == '__main__':
 
         '''The whole keyboard layout with lessons and courses.'''
 
-        def __init__(self, name, hotkey, symbols, lessons):
+        def __init__(self, name, hotkey, symbols, lessons, course):
 
             self._name = name
             self._hotkey = hotkey
@@ -94,9 +94,27 @@ if __name__ == '__main__':
                 lo = Lesson(l['name'], syms)
                 self._lessons.append(lo)
 
+            self._course = []
+            syms = []
+            for part in course:
+                news = []
+                syms = syms.copy()
+                for s in part['new']:
+                    symbol = self._s_sym(s)
+                    news.append(symbol)
+                    syms.append(symbol)
+                self._course.append(Lesson(''.join(part['new']), news))
+                self._course.append(Lesson(''.join(part['new']) + '+' + str(len(syms)-len(news)), syms))
+
+
         def learn(self, scr):
             '''Selecting and learning'''
             lsn = self._lessons[select_from_array(scr, "LESSON", [(l._name, '---') for l in self._lessons])]
+            lsn.learn(scr)
+
+        def learn_course(self, scr):
+            '''Selecting course and learning'''
+            lsn = self._course[select_from_array(scr, "LESSON", [(l._name, '---') for l in self._course])]
             lsn.learn(scr)
 
         def _s_sym(self, sym):
@@ -156,7 +174,7 @@ if __name__ == '__main__':
 
         def learn(self, scr):
             scr.clear()
-            lsn = self.get_lesson(15, 1)
+            lsn = self.get_lesson(_config['learning']['string']['length'], 1)
             lsn.learn(scr)
 
     class ExerciseLesson:
@@ -253,13 +271,13 @@ if __name__ == '__main__':
         pass
 
 
-    l = _config['layouts'][0]
-    qwerty = Layout(l['name'], l['hotkey'], l['symbols'], l['lessons'])
+    # l = _config['layouts'][0]
+    # qwerty = Layout(l['name'], l['hotkey'], l['symbols'], l['lessons'])
 
     # print(qwerty.symbols())
     # print(qwerty._lessons[1].info())
-    ex_set = qwerty._lessons[1].get_exercise_set()
-    ex_lesson = ex_set.get_lesson(_config['learning']['string']['length'], 1)
+    # ex_set = qwerty._lessons[1].get_exercise_set()
+    # ex_lesson = ex_set.get_lesson(_config['learning']['string']['length'], 1)
     # print(ex_lesson.string())
     # card = ex_lesson.card()
     # print(card.pretty())
@@ -291,9 +309,10 @@ if __name__ == '__main__':
         training_layout = Layout(layout['name'],
                                  layout['hotkey'],
                                  layout['symbols'],
-                                 layout['lessons'])
+                                 layout['lessons'],
+                                 layout['course'])
 
-        training_layout.learn(scr)
+        training_layout.learn_course(scr)
 
 
         
