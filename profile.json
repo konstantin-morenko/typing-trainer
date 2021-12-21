@@ -1,0 +1,39 @@
+{
+    "player": {
+	"name": "konstantin",
+	"dominant-hand": "right",
+	"registered": "2001-01-01 00:00:00"
+    },
+    // "highscores": {
+    // },
+    // "keyboards": [
+    // 	{
+    // 	    "layout": "qwerty"
+    // 	    // "keys": {
+    // 	    // 	{
+    // 	    // 	    "name": "a",
+    // 	    // 	    // "typed": 0,
+    // 	    // 	    // "errors": 0,
+    // 	    // 	    // "dirtiness": 0,
+    // 	    // 	    // "press-time": [ // last 50 presses
+    // 	    // 	    // 	0,
+    // 	    // 	    // 	0
+    // 	    // 	    // ]
+    // 	    // 	}
+    // 	    // }
+    // 	}
+    // ],
+    "history": [
+	{
+	    "datetime": "2001-01-01 00:00:00",
+	    "exercise": {
+		"type": "?",
+		"layout": "qwerty",
+		"length": 180,
+		"string": "?",
+		"typed": "?",
+		"times": [0, 0]	// Time in ms for each pressed key
+	    }
+	}
+    ]
+}
