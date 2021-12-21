@@ -420,6 +420,473 @@
 			"s",
 			"l"
 		    ]
+		},
+		{
+		    "name": "a",
+		    "new": [
+			"a"
+		    ]
+		},
+		{
+		    "name": "gh",
+		    "new": [
+			"g",
+			"h"
+		    ]
+		},
+		{
+		    "name": "ru",
+		    "new": [
+			"r",
+			"u"
+		    ]
+		},
+		{
+		    "name": "ei",
+		    "new": [
+			"e",
+			"i"
+		    ]
+		},
+		{
+		    "name": "wo",
+		    "new": [
+			"w",
+			"o"
+		    ]
+		},
+		{
+		    "name": "qp",
+		    "new": [
+			"q",
+			"p"
+		    ]
+		},
+		{
+		    "name": "ty",
+		    "new": [
+			"t",
+			"y"
+		    ]
+		},
+		{
+		    "name": "vn",
+		    "new": [
+			"v",
+			"n"
+		    ]
+		},
+		{
+		    "name": "cb",
+		    "new": [
+			"c",
+			"b"
+		    ]
+		},
+		{
+		    "name": "xz",
+		    "new": [
+			"x",
+			"z"
+		    ]
+		}
+	    ]
+	},
+	{
+	    "name": "dvorak",
+	    "hotkey": "d",
+	    "symbols": [
+		{
+		    "symbol": "a",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "home",
+			"finger": "pinky",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "b",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "lower",
+			"finger": "index",
+			"hand": "right",
+			"modified": "no",
+			"far": "1"
+		    }
+		},
+		{
+		    "symbol": "c",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "upper",
+			"finger": "middle",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "d",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "home",
+			"finger": "index",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "e",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "home",
+			"finger": "middle",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "f",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "upper",
+			"finger": "index",
+			"hand": "right",
+			"modified": "no",
+			"far": "1"
+		    }
+		},
+		{
+		    "symbol": "g",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "upper",
+			"finger": "index",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "h",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "home",
+			"finger": "index",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "i",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "home",
+			"finger": "index",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "j",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "lower",
+			"finger": "middle",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "k",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "lower",
+			"finger": "index",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "l",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "upper",
+			"finger": "pinky",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "m",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "lower",
+			"finger": "index",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "n",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "home",
+			"finger": "ring",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "o",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "home",
+			"finger": "ring",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "p",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "upper",
+			"finger": "index",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "q",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "lower",
+			"finger": "ring",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "r",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "upper",
+			"finger": "ring",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "s",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "home",
+			"finger": "pinky",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "t",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "home",
+			"finger": "middle",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "u",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "home",
+			"finger": "index",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "v",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "lower",
+			"finger": "ring",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "w",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "lower",
+			"finger": "middle",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "x",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "lower",
+			"finger": "index",
+			"hand": "left",
+			"modified": "no",
+			"far": "1"
+		    }
+		},
+		{
+		    "symbol": "y",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "upper",
+			"finger": "index",
+			"hand": "left",
+			"modified": "no",
+			"far": "0"
+		    }
+		},
+		{
+		    "symbol": "z",
+		    "classes": [
+			"alphabet"
+		    ],
+		    "position": {
+			"row": "lower",
+			"finger": "pinky",
+			"hand": "right",
+			"modified": "no",
+			"far": "0"
+		    }
+		}
+	    ],
+	    "lessons": [
+		{
+		    "name": "homepos",
+		    "symbols": [
+			"a",
+			"o",
+			"e",
+			"u",
+			"i",
+			"d",
+			"h",
+			"t",
+			"n",
+			"s"
+		    ]
+		}
+	    ],
+	    "course": [
+		{
+		    "name": "uh",
+		    "new": [
+			"u",
+			"h"
+		    ]
+		},
+		{
+		    "name": "et",
+		    "new": [
+			"e",
+			"t"
+		    ]
+		},
+		{
+		    "name": "on",
+		    "new": [
+			"o",
+			"n"
+		    ]
+		},
+		{
+		    "name": "as",
+		    "new": [
+			"a",
+			"s"
+		    ]
+		},
+		{
+		    "name": "id",
+		    "new": [
+			"i",
+			"d"
+		    ]
 		}
 	    ]
 	}
